@@ -7,7 +7,7 @@ int main(void)
   
   printf("Please enter the radius of the sphere: ");
   scanf("%f", &r);
-  printf("The volume of a sphere of radius %.1fm is: %.2f", 4.0f/3.0f * pi * r * r * r);
+  printf("The volume of a sphere of radius %.1fm is: %.2f\n", 4.0f/3.0f * pi * r * r * r);
   
   return 0;
 }
