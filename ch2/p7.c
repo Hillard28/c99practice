@@ -6,13 +6,13 @@ int main(void)
   printf("Enter a dollar amount: ");
   scanf("%d", &d_total);
   
-  d_20 = (d_total + 19) / 20;
+  d_20 = d_total / 20;
   d_total -= d_20 * 20;
   
-  d_10 = (d_total + 9) / 10;
-  d_total -= d_20 * 10;
+  d_10 = d_total / 10;
+  d_total -= d_10 * 10;
   
-  d_5 = (d_total + 4) / 5;
+  d_5 = d_total / 5;
   d_total -= d_5 * 5;
   
   d_1 = d_total;
