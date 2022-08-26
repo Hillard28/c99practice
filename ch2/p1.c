@@ -3,12 +3,12 @@
 int main(void)
 {
   //Can execute as multiple printf statements (easier to read)
-  printf("       *");
-  printf("      *");
-  printf("     *");
-  printf("*   *");
-  printf(" * *");
-  printf("  *");
+  printf("       *\n");
+  printf("      *\n");
+  printf("     *\n");
+  printf("*   *\n");
+  printf(" * *\n");
+  printf("  *\n");
   
   //Or as one confusing one
   printf("       *\n      *\n     *\n*   *\n * *\n  *");
