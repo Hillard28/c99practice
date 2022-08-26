@@ -8,7 +8,7 @@ int main(void)
   printf("     *\n");
   printf("*   *\n");
   printf(" * *\n");
-  printf("  *\n");
+  printf("  *\n\n");
   
   //Or as one confusing one
   printf("       *\n      *\n     *\n*   *\n * *\n  *");
