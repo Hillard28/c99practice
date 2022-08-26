@@ -17,10 +17,10 @@ int main(void)
   
   d_1 = d_total;
   
-  printf("$20 bills: %d", d_20);
-  printf("$10 bills: %d", d_10);
-  printf("$5 bills: %d", d_5);
-  printf("$1 bills: %d", d_1);
+  printf("$20 bills: %d\n", d_20);
+  printf("$10 bills: %d\n", d_10);
+  printf("$5 bills: %d\n", d_5);
+  printf("$1 bills: %d\n", d_1);
   
   return 0;
 }
