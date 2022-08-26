@@ -6,7 +6,7 @@ int main(void)
   
   printf("Enter an amount: ");
   scanf("%f", &pretax);  
-  printf("A pretax amount of %.2f with tax added: %.2f", pretax, pretax * 1.05f);
+  printf("A pretax amount of %.2f with tax added: %.2f\n", pretax, pretax * 1.05f);
   
   return 0;
 }
