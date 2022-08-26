@@ -2,14 +2,11 @@
 
 int main(void)
 {
-  float pretax, tax;
+  float pretax;
   
   printf("Enter an amount: ");
-  scanf("%f", &pretax);
-  
-  tax = 1.05 * pretax;
-  
-  printf("A pretax amount of %.2f with tax added: %.2f", pretax, tax);
+  scanf("%f", &pretax);  
+  printf("A pretax amount of %.2f with tax added: %.2f", pretax, pretax * 1.05f);
   
   return 0;
 }
