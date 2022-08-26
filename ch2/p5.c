@@ -14,7 +14,7 @@ int main(void)
     + (7 * x)
     - 6;
   
-  printf("3x^5 + 2x^4 - 5x^3 - x^2 + 7x - 6 = %d", y);
+  printf("3x^5 + 2x^4 - 5x^3 - x^2 + 7x - 6 = %d\n", y);
   
   return 0;
 }
