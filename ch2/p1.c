@@ -10,7 +10,7 @@ int main(void)
   printf(" * *");
   printf("  *");
   
-  //Or do as one confusing one
+  //Or as one confusing one
   printf("       *\n      *\n     *\n*   *\n * *\n  *");
   
   return 0;
