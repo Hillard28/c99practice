@@ -1,7 +1,7 @@
 /*********************************************************************************************************
 / WRITING A SIMPLE PROGRAM
 *********************************************************************************************************/
-1) Preprocessing: program is passed to a preprocessor that obeys directives (commands that begin with #).  Preprocessor adds and modifies the program
+1) Preprocessing: program is passed to a preprocessor that obeys directives (commands that begin with `#`).  Preprocessor adds and modifies the program
 2) Compiling: the modified program is passed to a compiler that translates to machine instructions (object code).
 3) Linking: a linker combines the object code produced by the compiler with any additional code needed to yield a complete executable.  Includes library functions (such as printf from stdio.h).
 
@@ -62,3 +62,40 @@ x = 10;
 // Valid in C99
 int y = 10;
 ```
+- It's best practice to append `f` to a constant that contains a decimal point if assigned to a float variable.
+- Mixing types is possible (e.g. `int` and `float`) though not always safe.
+- Once a variable has been assigned a value, it can be used to compute the value of another variable
+```
+x = 10;
+y = x + 5;
+```
+- The right side of an assignment can be a formula (or expression in C terminology) involving constants, variables, and/or operators.
+
+Variable peculiarities:
+- When an integer is divided by another, the answer is truncated; the digits after the decimal are dropped rather than any rounding being performed (e.g. 12 / 7 = 1).
+
+Initialization:
+- Some variables are set to zero when a program begins to execute but most are not.  A variable without a default value that hasn't been assigned a value is _uninitialized_.
+- Acessing an uninitialized variable will likely return an unpredictable result or even cause a crash.
+- To avoid, a variable can be declared and initialized in one step (here, 10 is the _initializer_):
+```
+int x = 10;
+```
+- An initializer is only good for the variable it is explicitly assigned to:
+```
+int x, y, z = 10; // x and y are uninitialized
+```
+
+/*********************************************************************************************************
+/ DEFINING NAMES FOR CONSTANTS
+*********************************************************************************************************/
+
+/*********************************************************************************************************
+/ IDENTIFIERS
+*********************************************************************************************************/
+
+Keywords:
+
+/*********************************************************************************************************
+/ LAYOUT OF A C PROGRAM
+*********************************************************************************************************/
