@@ -1,3 +1,5 @@
+// Calculates the remaining balance of a loan after the first three periods
+
 #include <stdio.h>
 
 int main(void)
