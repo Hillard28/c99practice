@@ -1,3 +1,5 @@
+// Prints a checkmark to console using asterisks
+
 #include <stdio.h>
 
 int main(void)
