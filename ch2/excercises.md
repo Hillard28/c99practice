@@ -8,4 +8,5 @@ int main(void)
 }
 ```
 Do you get a warning message?  What's needed to make it go away?
+
 A) The program does not return a status code upon completion.  `return 0;` should be added before the close bracket.
