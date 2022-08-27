@@ -1,3 +1,5 @@
+// Calculates the fewest combination of $20, $10, $5, and $1 bills to form an amount 
+
 #include <stdio.h>
 
 int main(void)
