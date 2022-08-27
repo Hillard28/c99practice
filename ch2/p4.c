@@ -1,3 +1,5 @@
+// Adds tax to an input amount
+
 #include <stdio.h>
 
 int main(void)
