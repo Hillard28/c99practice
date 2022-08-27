@@ -1,3 +1,5 @@
+// Calculates a polynomial using input x
+
 #include <stdio.h>
 
 int main(void)
