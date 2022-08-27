@@ -76,13 +76,102 @@ int x = 10;
 ```
 - An initializer is only good for the variable it is explicitly assigned to:
 ```
-int x, y, z = 10; // x and y are uninitialized
+int x, y, z = 10;   // x and y are uninitialized
 ```
 
 ## DEFINING NAMES FOR CONSTANTS
+- Good practice to give names for constants used by a program.
+- _Macro definition_ can be used to name a constant.
+```
+#define INCHES_PER_POUND 166
+```
+- `#define` is a processing directive just like `#include` (no semicolon at end of line).  When a program is compiled, the preprocessor replaces macros with the value they represent.
+```
+weight = (volume + INCHES_PER_POUND - 1) / INCHES_PER_POUND;
+```
+Becomes:
+```
+weight = (volume + 166 - 1) / 166;
+```
+- Macros can also be expressions.  If they contain operators the expression should be enclosed in parentheses:
+```
+#define RECIPROCAL_OF_PI (1.0f / 3.14159f)
+```
+- Macro names are commonly defined using only upper-case letters.
 
 ## IDENTIFIERS
+- While writing a program, variables, functions, macros, and other entity names are called _identifiers_.
+- Identifiers may contain letters, digits, and underscores, but they must begin with a letter or underscore (in C99, identifiers can contain "universal character names").
+```
+times10   // Valid
+_times10  // Valid
+10times   // Not valid
+```
+- C is case-sensitive: it distinguishes between upper-case and lower-case letters.  The following identifiers are all different:
+```
+job
+joB
+jOb
+Job
+JoB
+JOb
+JOB
+```
+- Programmers typically use either only lower-case letters in identifiers (except with macros) with underscores for legibility.  Some also use upper-case letters to begin any proceding words without underscores:
+```
+symbol_table
+symbolTable
+```
+- C has no limit on the maximum length of an identifier.
 
 ### Keywords
+- Keywords have special significance to C compilers and cannot be used as identifiers.  The following are all keywords:
+```
+auto      enum      restrict    unsigned
+break     extern    return      void
+case      float     short       volatile
+char      for       signed      while
+const     goto      sizeof      _Bool
+continue  if        static      _Complex
+default   inline    struct      _Imaginary
+do        int       switch
+double    long      typedef
+else      register  union
+```
+- Because of C's case-sensitivity, keywords must appear in programs as shown above.
+- Names of functions in the standard library (such as `printf`) contain only lower-case letters as well.
 
 ## LAYOUT OF A C PROGRAM
+- A C program can be thought of as a series of _tokens_: groups of characters that can't be split without changing their meaning.  Identifiers and keywords are tokens, as are operators such as + and -, punctuation marks such as a comma and semicolon, and string literals.
+```
+printf("Height: %d\n", height);
+printf    (   "Height: %d\n"    ,   height    )   ;
+  1       2           3         4     5       6   7
+// 1 and 2: identifiers
+// 3: string literal
+// 2, 4, 6, and 7: punctuation
+```
+- The amount of space between tokens typically isn't critical, but adding space and newlines improves readability.
+- C allows programmers to insert any amount of space between tokens, with some important consequences:
+1) Statements can be divided over any number of lines:
+```
+printf("Dimensional weight (pounds): %d\n",
+  (volume + INCHES_PER_POUND - 1) / INCHES_PER_POUND);
+```
+2) Spaces between tokens make it easier to separate them:
+```
+volume=height*length*width;         // Valid
+volume = height * length * width;   // Easier to read
+```
+3) Indentation can make nesting easier to spot (see example under 1.).
+4) Blank lines can divide a program into logical units, making it easier to discern a program's structure.
+- Although extra spaces can be added between tokens, it's not possible to add space within a token without changing the meaning of a program or causing an error:
+```
+float fahrenheit, celsius   // Valid
+fl oat fahrenheit, celsius  // Wrong
+```
+- Putting a space inside a string literal is allowed (though it changes the meaning), but splitting a string over multiple lines is illegal:
+```
+printf("To C or not to C:
+that is the question.\n");  // Wrong
+```
