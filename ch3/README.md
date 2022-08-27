@@ -61,6 +61,13 @@ scanf("%d%d", &x, &y);    // Assigned by a use entering integers in form: "%d %d
 - `scanf` saves characters that can't be part of the current item to be read again when scanning for the next input item.
 
 ### ORDINARY CHARACTERS IN FORMAT STRINGS
+- Format strings can be written to contain ordinary characters and conversion specifications.  Action taken by `scanf` when processing an ordinary character in a format string depends on whether or not it's a white-space character:
+  - White-space character: when encountering one or more consecutive white-space characters, `scanf` reads them from the input until reaching a non-white-space character.  The number of white-space characters is irrelevant; one white-space character in the format string will match any number of white-space characters in the input.
+  - Other characters: when encountering a non-white-space character in a format string, `scanf` compares it with the next input character.  If the two characters match, `scanf` discards the input character and continues processing the format string.  If the characters don't match, `scanf` puts the offending character back into the input, then aborts without further processing of the format string or reading of characters from the input.
+```
+int x, y;
 
-
-
+scanf("%d/%d", &x, &y);
+```
+- If the input to the above is " 5/ 96", `scanf` skips the first space, matches %d with 5, matches "/" with "/", skips a space, and matches %d with 96.
+- If the input to the above is " 5 / 96", `scanf` skips the first space, matches %d with 5, then attempts to match "/" with " ".  Since there is no match, `scanf` puts the space back, with " / 96" remaining to be read by the next call to `scanf`.  To allow spaces after the first number, the format string `%d /%d` should be used instead.
