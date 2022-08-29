@@ -126,18 +126,20 @@ symbolTable
 
 ### Keywords
 - Keywords have special significance to C compilers and cannot be used as identifiers.  The following are all keywords:
-```
-auto      enum      restrict    unsigned
-break     extern    return      void
-case      float     short       volatile
-char      for       signed      while
-const     goto      sizeof      _Bool
-continue  if        static      _Complex
-default   inline    struct      _Imaginary
-do        int       switch
-double    long      typedef
-else      register  union
-```
+
+| 1 | 2 | 3 | 4 |
+| --- | --- | ---- | --- |
+| auto | enum | restrict | unsigned |
+| break | extern | return | void |
+| case | float | short | volatile |
+| char | for | signed | while |
+| const | goto | sizeof | \_Bool |
+| continue | if | static | \_Complex |
+| default | inline | struct | \_Imaginary |
+| do | int | switch |  |
+| double | long | typedef |  |
+| else | register | union |  |
+
 - Because of C's case-sensitivity, keywords must appear in programs as shown above.
 - Names of functions in the standard library (such as `printf`) contain only lower-case letters as well.
 
