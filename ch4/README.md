@@ -31,9 +31,9 @@ j = -i;
 
 ### OPERATOR PRECEDENCE AND ASSOCIATIVITY
 - C uses _operator precedence_ rules to resolve ambiguity in expressions.  Arithmetic operators have the following precedence:
-1) + - (unary)
-2) * / %
-3) + - (binary)
+1) \+ \- (unary)
+2) \* \/ \%
+3) \+ \- (binary)
 - Operators listed on the same line have equal precedence (if in the same priority level above).
 - When an expression contains two or more operators at the same level of precedence, the _associativity_ of operators is considered.  An operator is _left associative_ if it groups from left to right:
 ```
