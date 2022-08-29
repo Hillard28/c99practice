@@ -29,7 +29,7 @@ printf("%d %.2f\n", 10.25, 5);    // Wrong
 
 ### CONVERSION SPECIFICATIONS
 - Conversion specifications give a high level of control over output appearance.
-- Generally, a conversion specification have have the form `%m.pX` or `%-m.pX`, where `m` and `p` are integer constants and `X` is a letter.  `m` and `p` are both optional.  If `p` is omitted, the period is also dropped
+- Generally, a conversion specification has the form `%m.pX` or `%-m.pX`, where `m` and `p` are integer constants and `X` is a letter.  `m` and `p` are both optional.  If `p` is omitted, the period is also dropped
 - The _minimum field width_, `m`, specifies the minimum number of characters to print.  If the value to be printed required less than `m` characters, the value is right justified, with extra spaces preceding the value (`%4d` displays 123 as " 123").  If the value to be printed requires more than `m` characters, the field width automatically expands to the necessary size (`%4d` displays 12345 as "12345").
 - The _conversion specifier_, `X` indicates which conversion should be applied to the value before printing, while the _precision_, `p`, specifies the precision of the value being printed.
 - Typical conversion specifiers are:
