@@ -5,6 +5,7 @@
 int main(void)
 {
   int d;
+  
   printf("Enter a three-digit number: ");
   scanf("%d", &d);
   
