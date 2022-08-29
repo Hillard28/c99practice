@@ -155,18 +155,18 @@ printf    (   "Height: %d\n"    ,   height    )   ;
 ```
 - The amount of space between tokens typically isn't critical, but adding space and newlines improves readability.
 - C allows programmers to insert any amount of space between tokens, with some important consequences:
-1) Statements can be divided over any number of lines:
-```
-printf("Dimensional weight (pounds): %d\n",
-  (volume + INCHES_PER_POUND - 1) / INCHES_PER_POUND);
-```
-2) Spaces between tokens make it easier to separate them:
-```
-volume=height*length*width;         // Valid
-volume = height * length * width;   // Easier to read
-```
-3) Indentation can make nesting easier to spot (see example under 1.).
-4) Blank lines can divide a program into logical units, making it easier to discern a program's structure.
+  1) Statements can be divided over any number of lines:
+  ```
+  printf("Dimensional weight (pounds): %d\n",
+    (volume + INCHES_PER_POUND - 1) / INCHES_PER_POUND);
+  ```
+  2) Spaces between tokens make it easier to separate them:
+  ```
+  volume=height*length*width;         // Valid
+  volume = height * length * width;   // Easier to read
+  ```
+  3) Indentation can make nesting easier to spot (see example under 1.).
+  4) Blank lines can divide a program into logical units, making it easier to discern a program's structure.
 - Although extra spaces can be added between tokens, it's not possible to add space within a token without changing the meaning of a program or causing an error:
 ```
 float fahrenheit, celsius   // Valid
