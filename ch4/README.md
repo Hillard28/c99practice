@@ -189,8 +189,4 @@ j = i * i++;
 - C has an unusual rule that any expression can be used as a statement; any expression, regardless of type or computation, can be turned into a statement by appending a semicolon:
 ```
 ++i;    // When executed, i is permanently incremented, then the new value of i is fetched, but discarded since it's unused
-
-
-
-
-
+```
