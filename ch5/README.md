@@ -59,10 +59,10 @@ x || y    // Equal to 1 if x != 0 or y != 0
 ```
 i > 0 && ++j > 0;   // If the first expression is false, j is not incremented
 ```
+- The `!` operator has the same precedence as unary plus and minus operators.  The precedence of `&&` and `||` is lower than relational and equality operators:
+```
+i < j && k == m;
+(i < j) && (k == m);
+- The `!` operator is right associative; `&&` and `||` are left associative.
 
-
-
-
-
-
-
+## THE IF STATEMENT
