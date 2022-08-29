@@ -137,8 +137,58 @@ k = ++i + j++;    // Yields (i + 1) + j
 ```
 
 ## EXPRESSION EVALUATION
+- Summary of all operators seen thus far with precedence:
 
+| Precedence | Name | Symbol(s) | Associativity |
+| --- | --- | --- | --- |
+| 1 | Increment (postfix) | ++ | left |
+| 1 | Decrement (postfix) | -- | left |
+| 2 | Increment (prefix) | ++ | right |
+| 2 | Decrement (prefix) | -- | right |
+| 2 | Unary plus | + | right |
+| 2 | Unary minus | - | right |
+| 3 | Multiplicative | \*  / % | left |
+| 4 | Additive | +  - | left |
+| 5 | Assignment | \=  \*=  /=  %=  +=  -+ | right|
 
+```
+a = b += c++ - d + --e / -f   // c is incremented post assignment
+// Using operator precedence from 1-5
+a = b += (c++) - d + --e / -f
+a = b += (c++) - d + (--e) / (-f)
+a = b += (c++) - d + ((--e) / (-f))
+(a = (b += (((c++) - d) + ((--e) / (-f)))))
+```
+
+### ORDER OF SUBEXPRESSION EVALUATION
+- Rules of operator precedence and associativity allow programmers to break any C expression into subexpressions to determine where parentheses would go if an expression were fully parenthesized.  These rules don't always indicate the value of the expression which may depend on the order in which subexpressions are evaluated.
+- C doesn't define the order in which subexpressions are evaluated (with exception for subexpressions involving logical and, logical or, conditonal, or comma operators).  In the expression `(a + b) * (c - d)`, we don't know whether `(a + b)` will be evaluated before `(c - d)`.
+  - Most expressions have the same value regardless of the order of subexpression evaluation, but this may not be true when a subexpression modifies its operands:
+```
+a = 5;
+c = (b = a + 2) - (a = 1);    // Will generate 6 (if b = a + 2 evaluated first) or 2 (if a = 1 evaluated first) with most compilers
+```
+- It's good practice to avoid using assignment operators in subexpressions; instead a series of separate assignments should be used:
+```
+a = 5;
+b = a + 2;
+a = 1;
+c = b - a;    // Will always output 6
+```
+- Besides assignment operators, the onky operators that modify their operands are increment and decrement.
+```
+i = 2;
+j = i * i++;
+```
+- The above code can generate either 4 or 6, depending on order of evaluation.  In the latter case:
+1) The second operand (original value of i) is fetched (retrived from memory and stored in the CPU register), then i is incremented.
+2) The first operand (new value of i) is fetched.
+3) The new and original values of i are multiplied, yielding 6.
+
+## EXPRESSION STATEMENTS
+- C has an unusual rule that any expression can be used as a statement; any expression, regardless of type or computation, can be turned into a statement by appending a semicolon:
+```
+++i;    // When executed, i is permanently incremented, then the new value of i is fetched, but discarded since it's unused
 
 
 
