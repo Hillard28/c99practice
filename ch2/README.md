@@ -48,7 +48,7 @@
 ### Assignment
 - A variable can be given a value by means of assignment (e.g. `x = 10;`).  A variable must be declared before being given a value:
 ```
-// Valid in C89 and C99
+/* Valid in C89 and C99 */
 int x;
 x = 10;
 
