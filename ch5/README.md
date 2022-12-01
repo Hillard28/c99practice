@@ -12,9 +12,9 @@
 ### RELATIONAL OPERATORS
 - C's _relational operators_ correspond to the <, >, <=, and >= operators of mathematics:
   - <: less than
-  - >: greater than
+  - \>: greater than
   - <=: less than or equal to
-  - >=: greater than or equal to
+  - \>=: greater than or equal to
 - Relational operators can compare integers and floating-point numbers, with allowance for mixed types.
 - Relational operator precedence is lower than that of arithmetic operators and is left associative:
 ```
