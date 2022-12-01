@@ -53,7 +53,7 @@ i * j / k = (i * j) / k
 ```
 i = 5;    // i is now 5
 j = i;    // j is now 5
-k + 10 * i + j;   // k is now 55
+k = 10 * i + j;   // k is now 55
 ```
 - If `v` and `e` don't have the same type, the value of `e` is converted to the type of `v` as the assignment takes place:
 ```
