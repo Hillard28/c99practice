@@ -19,6 +19,7 @@ int main(void) {
         printf("Occurrences:\t");
         for (int i = 0; i < 10; i++) {
             printf(" %d", digit_seen[i]);
+            digit_seen[i] = 0;
         }
         printf("\n");
     } while (input > 0);
