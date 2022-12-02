@@ -15,16 +15,16 @@ int main(void) {
     while (point <= 'Z') {
         move = up = down = left = right = 0;
 
-        if (j + 1 < 10 && grid[i][j + 1] == 0) {
+        if (j + 1 < 10 && !grid[i][j + 1]) {
             up = 1;
         }
-        if (j - 1 >= 0 && grid[i][j - 1] == 0) {
+        if (j - 1 >= 0 && !grid[i][j - 1]) {
             down = 1;
         }
-        if (i + 1 < 10 && grid[i + 1][j] == 0) {
+        if (i + 1 < 10 && !grid[i + 1][j]) {
             right = 1;
         }
-        if (i - 1 >= 0 && grid[i - 1][j] == 0) {
+        if (i - 1 >= 0 && !grid[i - 1][j]) {
             left = 1;
         }
 
