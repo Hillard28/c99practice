@@ -28,6 +28,7 @@ int play_game(void) {
                 return 0;
             }
         }
+        return 2;
     }
 }
 
@@ -39,13 +40,17 @@ int main(void) {
     play = 'y';
 
     while (play == 'y') {
-        if (play_game() == 1) {
+        outcome = play_game();
+        if (outcome == 1) {
             printf("You win!\n");
             wins += 1;
         }
-        else {
+        else if (outcome == 0) {
             printf("You lose!\n");
             losses += 1;
+        }
+        else {
+            printf("Something went wrong.\n");
         }
         printf("Would you like to play again?: ");
         scanf(" %c", &play);
