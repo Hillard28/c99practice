@@ -7,7 +7,7 @@ int power(int x, int pow) {
         result = 1;
     }
     else {
-        for (int i = 1; i < pow; i++) {
+        while (--pow > 0) {
             result *= x;
         }
     }
