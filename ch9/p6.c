@@ -15,8 +15,7 @@ int power(int x, int pow) {
 }
 
 int main(void) {
-    int x, value;
-    int pow = 5;
+    int x;
 
     printf("Input a value for x: ");
     scanf("%d", &x);
