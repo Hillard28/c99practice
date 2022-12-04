@@ -38,6 +38,8 @@ int main(void) {
     
     wins = 0, losses = 0;
     play = 'y';
+    
+    srand((unsigned) time(NULL));
 
     while (play == 'y') {
         outcome = play_game();
