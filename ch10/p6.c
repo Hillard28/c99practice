@@ -96,6 +96,7 @@ int main(void) {
                 case ' ':
                     break;
                 default:
+                    printf("\nInvalid input\n");
                     exit(EXIT_FAILURE);
             }
         }
