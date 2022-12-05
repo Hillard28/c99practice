@@ -85,8 +85,14 @@ int main(void) {
                     push(op1 / op2);
                     break;
                 case '=':
-                    printf("Value of expression: %d\n", pop());
-                    exit(EXIT_SUCCESS);
+                    if (len == 1) {
+                        printf("Value of expression: %d\n", pop());
+                        exit(EXIT_SUCCESS);
+                    }
+                    else {
+                        printf("\nNot enough operators in expression\n");
+                        exit(EXIT_FAILURE);
+                    }
                 case ' ':
                     break;
                 default:
