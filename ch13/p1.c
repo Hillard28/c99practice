@@ -6,7 +6,7 @@
 int read_word(char *str, int n) {
     int ch, i = 0;
 
-    while ((ch = getchar()) != '\n' && i < n) {
+    while ((ch = getchar()) != '\n') {
         if (i < n) {
             str[i++] = ch;
         }
